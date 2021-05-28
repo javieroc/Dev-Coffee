@@ -1,22 +1,19 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import React from 'react';
+import { Navbar } from '../Navbar';
+
+const images = import.meta.globEager('/src/assets/*.jpg');
 
 function Header(): JSX.Element {
   return (
-    <Flex
-      justifyContent="space-between"
-      padding="1em"
-      bgGradient="linear(to-b, gray.100, white)"
+    <Box
+      background={`url(${images['/src/assets/morning-1.jpg'].default}) no-repeat`}
+      backgroundPosition=""
+      backgroundSize="100% 100%, cover"
+      minHeight="35vw"
     >
-      <Flex>
-        <Text fontSize="xl" color="orange.400">Dev</Text>
-        <Text fontSize="xl" color="gray.400">&</Text>
-        <Text fontSize="xl" color="black">Coffee</Text>
-      </Flex>
-      <Flex>
-        <Text>Team</Text>
-      </Flex>
-    </Flex>
+      <Navbar />
+    </Box>
   )
 }
 
