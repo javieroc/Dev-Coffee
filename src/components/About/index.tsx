@@ -7,6 +7,7 @@ function About(): JSX.Element {
       spacing="24px"
       bg="white"
       padding="1em"
+      margin={["3em 0", "3.5em 0", "4em 0"]}
       minHeight={["20vw", "25vw"]}
       direction="row"
       justify="center"
