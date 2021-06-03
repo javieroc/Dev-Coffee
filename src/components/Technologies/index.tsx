@@ -14,97 +14,17 @@ import MongoLogo from '../../assets/mongo.png';
 
 function Technologies(): JSX.Element {
   const images = [
-    <Image
-      src={TypescriptLogo}
-      width="60%"
-      position="absolute"
-      top="50%"
-      right="50%"
-      transform="translate(50%, -50%)"
-      borderRadius="4px"
-    />,
-    <Image
-      src={ReactLogo}
-      width="70%"
-      position="absolute"
-      top="50%"
-      right="50%"
-      transform="translate(50%, -50%)"
-    />,
-    <Image
-      src={ReduxLogo}
-      width="70%"
-      position="absolute"
-      top="50%"
-      right="50%"
-      transform="translate(50%, -50%)"
-    />,
-    <Image
-      src={GraphqlLogo}
-      width="70%"
-      position="absolute"
-      top="50%"
-      right="50%"
-      transform="translate(50%, -50%)"
-    />,
-    <Image
-      src={PythonLogo}
-      width="70%"
-      position="absolute"
-      top="50%"
-      right="50%"
-      transform="translate(50%, -50%)"
-    />,
-    <Image
-      src={PHPLogo}
-      width="75%"
-      position="absolute"
-      top="50%"
-      right="50%"
-      transform="translate(50%, -50%)"
-    />,
-    <Image
-      src={DockerLogo}
-      width="80%"
-      position="absolute"
-      top="50%"
-      right="50%"
-      transform="translate(50%, -50%)"
-    />,
-    <Image
-      src={NodeLogo}
-      width="70%"
-      position="absolute"
-      top="50%"
-      right="50%"
-      transform="translate(50%, -50%)"
-    />,
-    <Image
-      src={JSLogo}
-      width="60%"
-      position="absolute"
-      top="50%"
-      right="50%"
-      transform="translate(50%, -50%)"
-      border="2px solid black"
-      borderRadius="3px"
-    />,
-    <Image
-      src={PostgresLogo}
-      width="60%"
-      position="absolute"
-      top="50%"
-      right="50%"
-      transform="translate(50%, -50%)"
-    />,
-    <Image
-      src={MongoLogo}
-      width="70%"
-      position="absolute"
-      top="50%"
-      right="50%"
-      transform="translate(50%, -50%)"
-    />,
+    TypescriptLogo,
+    ReactLogo,
+    ReduxLogo,
+    GraphqlLogo,
+    PythonLogo,
+    PHPLogo,
+    DockerLogo,
+    NodeLogo,
+    JSLogo,
+    PostgresLogo,
+    MongoLogo,
   ];
 
   return (
@@ -120,24 +40,34 @@ function Technologies(): JSX.Element {
       >
         <Box fontSize="0" _before={{
           content: '""',
-          width: 'calc(100px/2 + 4px)',
+          width: ['calc(70px/2 + 4px)', 'calc(100px/2 + 4px)'],
           float: 'left',
           height: '100%',
-          shapeOutside: 'repeating-linear-gradient(transparent 0 calc((100px*3*1.1547/2 + 4*4px) - 3px), #fff 0 calc(100px*3*1.1547/2 + 4*4px))'
+          shapeOutside: [
+            'repeating-linear-gradient(transparent 0 calc((70px*3*1.1547/2 + 4*4px) - 3px), #fff 0 calc(70px*3*1.1547/2 + 4*4px))',
+            'repeating-linear-gradient(transparent 0 calc((100px*3*1.1547/2 + 4*4px) - 3px), #fff 0 calc(100px*3*1.1547/2 + 4*4px))'
+          ]
         }}>
-          {images.map((image, index: number) => (
+          {images.map((image: string, index: number) => (
             <Box
               key={index}
-              width="100px"
-              height="calc(100px*1.1547)"
+              width={["70px", "100px"]}
+              height={["calc(70px*1.1547)", "calc(100px*1.1547)"]}
               margin="4px"
               clipPath="polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%)"
-              marginBottom="calc(4px - 100px*0.2885)"
+              marginBottom={["calc(4px - 70px*0.2885)", "calc(4px - 100px*0.2885)"]}
               display='inline-block'
               background="white"
               position="relative"
             >
-              {image}
+              <Image
+                src={image}
+                width="55%"
+                position="absolute"
+                top="50%"
+                right="50%"
+                transform="translate(50%, -50%)"
+              />
             </Box>
           ))}
         </Box>
