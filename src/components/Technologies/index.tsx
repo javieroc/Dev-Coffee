@@ -28,12 +28,12 @@ function Technologies(): JSX.Element {
   ];
 
   return (
-    <Box background="blue.600">
+    <Box background="blue.700">
       <Center marginTop="2em">
         <Text fontSize={['2xl', '3xl', '4xl']} color="white">Our Skills</Text>
       </Center>
       <Flex
-        background="blue.600"
+        background="blue.700"
         padding="3em 1em 7em 1em"
         margin="auto"
         width={['100%', '80%', '60%']}
