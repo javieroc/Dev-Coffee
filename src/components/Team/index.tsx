@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, Img } from '@chakra-ui/react';
+import { Box, Center, Flex, Img, Tag, Text } from '@chakra-ui/react';
 
 function Team(): JSX.Element {
   return (
@@ -10,6 +10,9 @@ function Team(): JSX.Element {
         width="100%"
         position="relative"
       >
+        <Center>
+          <Text fontSize={['2xl', '3xl', '4xl']} color="white">Team</Text>
+        </Center>
         <Box
           width="0px"
           height="0px"
@@ -76,35 +79,63 @@ function Team(): JSX.Element {
           display: 'block',
           width: "100%",
           minHeight: "400px",
-          background: "linear-gradient(40deg, #fff2 0%, #fff2 40%, #fff6 50%, #fff2 60%, #fff2 100%)",
+          background: `linear-gradient(
+            40deg,
+            #fff2 0%,
+            #fff2 10%,
+            #fff6 15%,
+            #fff2 20%,
+            #fff2 30%,
+            #fff2 30%,
+            #fff2 40%,
+            #fff6 45%,
+            #fff2 50%,
+            #fff2 60%,
+            #fff2 60%,
+            #fff2 70%,
+            #fff6 75%,
+            #fff2 80%,
+            #fff2 100%
+          )`,
           position: 'absolute',
           zIndex: 0
         }}
       >
-        <Img
-          boxSize="150px"
-          borderRadius="full"
-          backgroundColor="gray.50"
-          src="https://robohash.org/1"
-        />
-        <Img
-          boxSize="150px"
-          borderRadius="full"
-          backgroundColor="gray.50"
-          src="https://robohash.org/2"
-        />
-        <Img
-          boxSize="150px"
-          borderRadius="full"
-          backgroundColor="gray.50"
-          src="https://robohash.org/3"
-        />
-        <Img
-          boxSize="150px"
-          borderRadius="full"
-          backgroundColor="gray.50"
-          src="https://robohash.org/4"
-        />
+        {[
+          {
+            name: 'Dani',
+            title: 'Frontend Developer'
+          },
+          {
+            name: 'Facu',
+            title: 'Software Engineer'
+          },
+          {
+            name: 'Matt',
+            title: 'Software Developer'
+          },
+          {
+            name: 'Connan',
+            title: 'Software Developer'
+          },
+        ].map((member) => (
+          <Box display="flex" flexDirection="column" alignItems="center" key={member.name}>
+            <Img
+              boxSize="140px"
+              borderRadius="xl"
+              backgroundColor="gray.50"
+              src={`https://robohash.org/${member.name}`}
+            />
+            <Tag
+              size="lg"
+              variant="solid"
+              colorScheme="blue"
+              marginTop="8px"
+            >
+              {`${member.name} | ${member.title}`}
+            </Tag>
+          </Box>
+        ))}
       </Box>
 
       <Box
