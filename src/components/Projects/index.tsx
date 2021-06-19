@@ -1,9 +1,19 @@
 import React from 'react';
-import { Box, Center, Flex, Image, VStack, HStack, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Center,
+  Flex,
+  HStack,
+  IconButton,
+  Image,
+  Text,
+} from '@chakra-ui/react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
+
 
 function Projects(): JSX.Element {
   return (
-    <Center bg="blue.900">
+    <Center bg="blue.900" position="relative">
       <Flex
         maxWidth="1024px"
         wrap="wrap"
@@ -29,6 +39,26 @@ function Projects(): JSX.Element {
           <Text fontSize="lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat velit alias et dicta tempora culpa, voluptate ab blanditiis esse eius itaque dolore asperiores sunt, tenetur enim commodi exercitationem in. Dolorum expedita provident aut quas dolor aperiam amet assumenda placeat! Ea impedit, cum rerum ducimus dignissimos odio amet! Officiis, minus cupiditate?</Text>
         </Box>
       </Flex>
+      <HStack
+        spacing="24px"
+        position="absolute"
+        left="50%"
+        bottom="12%"
+        transform="translate(-50%, 0)"
+      >
+        <IconButton
+          colorScheme="orange"
+          aria-label="left"
+          size="md"
+          icon={<ChevronLeftIcon />}
+        />
+        <IconButton
+          colorScheme="teal"
+          aria-label="right"
+          size="md"
+          icon={<ChevronRightIcon />}
+        />
+      </HStack>
     </Center>
   )
 }
