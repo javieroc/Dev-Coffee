@@ -11,7 +11,6 @@ import {
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { AnimatePresence, motion } from 'framer-motion';
 
-
 const variants = {
   enter: (direction: number) => {
     return {
@@ -34,17 +33,44 @@ const variants = {
 };
 
 function Projects(): JSX.Element {
-  const [[project, direction], setProject] = useState([0, 0]);
+  const [[page, direction], setProject] = useState([0, 0]);
+
+  const projects = [
+    {
+      id: 1,
+      src: 'https://picsum.photos/id/1/800/600',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cupiditate dicta aliquam eligendi quasi omnis autem, alias quia eum hic?',
+    },
+    {
+      id: 2,
+      src: 'https://picsum.photos/id/10/800/600',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cupiditate dicta aliquam eligendi quasi omnis autem, alias quia eum hic?',
+    },
+    {
+      id: 3,
+      src: 'https://picsum.photos/id/20/800/600',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cupiditate dicta aliquam eligendi quasi omnis autem, alias quia eum hic?',
+    },
+    {
+      id: 4,
+      src: 'https://picsum.photos/id/30/800/600',
+      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cupiditate dicta aliquam eligendi quasi omnis autem, alias quia eum hic?',
+    },
+  ]
 
   const paginate = (newDirection: number) => {
-    setProject([project + newDirection, newDirection]);
+    setProject([page + newDirection, newDirection]);
   };
 
+  const project = projects[Math.abs(page % 4)];
   return (
     <AnimatePresence custom={direction} initial={false}>
-      <Center bg="blue.900" position="relative">
+      <Center bg="blue.900" position="relative" flexDirection="column" padding="">
+        <Center marginTop="2em">
+          <Text fontSize={['2xl', '3xl', '4xl']} color="white">Projects</Text>
+        </Center>
         <motion.div
-          key={project}
+          key={project.id}
           custom={direction}
           variants={variants}
           initial="enter"
@@ -67,7 +93,7 @@ function Projects(): JSX.Element {
           >
             <Box width={["100%", "100%", "60%"]}>
               <Image
-                src="https://picsum.photos/800/600"
+                src={project.src}
                 borderRadius={["8px 8px 0px 0px", "8px 8px 0px 0px", "8px"]}
               />
             </Box>
@@ -77,7 +103,7 @@ function Projects(): JSX.Element {
               borderRadius={["0px 0px 4px 4px", "0px 0px 4px 4px", "4px"]}
               padding="16px"
             >
-              <Text fontSize="lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat velit alias et dicta tempora culpa, voluptate ab blanditiis esse eius itaque dolore asperiores sunt, tenetur enim commodi exercitationem in. Dolorum expedita provident aut quas dolor aperiam amet assumenda placeat! Ea impedit, cum rerum ducimus dignissimos odio amet! Officiis, minus cupiditate?</Text>
+              <Text fontSize="lg">{project.text}</Text>
             </Box>
           </Flex>
         </motion.div>

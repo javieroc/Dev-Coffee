@@ -1,6 +1,6 @@
 import React from 'react';
 import { Flex } from '@chakra-ui/react';
-import { About, Header, Projects, Technologies, Team } from './components';
+import { About, Header, Footer, Projects, Technologies, Team } from './components';
 
 function App(): JSX.Element {
   return (
@@ -10,6 +10,7 @@ function App(): JSX.Element {
       <Technologies />
       <Team />
       <Projects />
+      <Footer />
     </Flex>
   );
 }
