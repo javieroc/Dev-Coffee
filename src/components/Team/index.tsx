@@ -1,7 +1,10 @@
 import React from 'react';
 import { Box, Center, Flex, Img, Tag, Text } from '@chakra-ui/react';
+import { useAppContext } from '../../context';
 
 function Team(): JSX.Element {
+  const { teamSectionRef } = useAppContext()!;
+
   return (
     <Flex direction="column">
       <Box
@@ -10,7 +13,7 @@ function Team(): JSX.Element {
         width="100%"
         position="relative"
       >
-        <Center>
+        <Center ref={teamSectionRef}>
           <Text fontSize={['2xl', '3xl', '4xl']} color="white">Team</Text>
         </Center>
         <Box

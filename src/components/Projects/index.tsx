@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useAppContext } from '../../context';
 
 const variants = {
   enter: (direction: number) => {
@@ -34,6 +35,7 @@ const variants = {
 
 function Projects(): JSX.Element {
   const [[page, direction], setProject] = useState([0, 0]);
+  const { projectsSectionRef } = useAppContext()!;
 
   const projects = [
     {
@@ -66,7 +68,7 @@ function Projects(): JSX.Element {
   return (
     <AnimatePresence custom={direction} initial={false}>
       <Center bg="blue.900" position="relative" flexDirection="column" padding="">
-        <Center marginTop="2em">
+        <Center marginTop="2em" ref={projectsSectionRef}>
           <Text fontSize={['2xl', '3xl', '4xl']} color="white">Projects</Text>
         </Center>
         <motion.div

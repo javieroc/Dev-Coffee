@@ -1,7 +1,15 @@
 import { Flex, Text } from '@chakra-ui/react';
 import React from 'react';
+import { useAppContext } from '../../context';
 
 function Navbar(): JSX.Element {
+  const {
+    contactUsSectionRef,
+    projectsSectionRef,
+    stackSectionRef,
+    teamSectionRef,
+  } = useAppContext()!;
+
   return (
     <Flex
       align="center"
@@ -20,15 +28,10 @@ function Navbar(): JSX.Element {
           padding="4px"
           color="rgb(247,250,252, .85)"
           margin="0 4px"
-        >
-          Team
-        </Text>
-        <Text
-          border="2px solid rgb(247,250,252, .85)"
-          borderRadius="4px"
-          padding="4px"
-          color="rgb(247,250,252, .85)"
-          margin="0 4px"
+          cursor="pointer"
+          onClick={() => {
+            stackSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+          }}
         >
           Stack
         </Text>
@@ -38,6 +41,23 @@ function Navbar(): JSX.Element {
           padding="4px"
           color="rgb(247,250,252, .85)"
           margin="0 4px"
+          cursor="pointer"
+          onClick={() => {
+            teamSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+          }}
+        >
+          Team
+        </Text>
+        <Text
+          border="2px solid rgb(247,250,252, .85)"
+          borderRadius="4px"
+          padding="4px"
+          color="rgb(247,250,252, .85)"
+          margin="0 4px"
+          cursor="pointer"
+          onClick={() => {
+            projectsSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+          }}
         >
           Projects
         </Text>
@@ -47,6 +67,10 @@ function Navbar(): JSX.Element {
           padding="4px"
           color="rgb(247,250,252, .85)"
           margin="0 4px"
+          cursor="pointer"
+          onClick={() => {
+            contactUsSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+          }}
         >
           Contact Us
         </Text>

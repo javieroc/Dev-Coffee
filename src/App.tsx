@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Flex } from '@chakra-ui/react';
 import {
   About,
@@ -9,18 +9,31 @@ import {
   Technologies,
   Team,
 } from './components';
+import { AppContext } from './context';
 
 function App(): JSX.Element {
+  const stackSectionRef = useRef<HTMLDivElement | null>(null);
+  const teamSectionRef = useRef<HTMLDivElement | null>(null);
+  const projectsSectionRef = useRef<HTMLDivElement | null>(null);
+  const contactUsSectionRef = useRef<HTMLDivElement | null>(null);
+
   return (
-    <Flex direction="column">
-      <Header />
-      <About />
-      <Technologies />
-      <Team />
-      <Projects />
-      <ContactUs />
-      <Footer />
-    </Flex>
+    <AppContext.Provider value={{
+      stackSectionRef,
+      teamSectionRef,
+      projectsSectionRef,
+      contactUsSectionRef,
+    }}>
+      <Flex direction="column">
+        <Header />
+        <About />
+        <Technologies />
+        <Team />
+        <Projects />
+        <ContactUs />
+        <Footer />
+      </Flex>
+    </AppContext.Provider>
   );
 }
 

@@ -10,10 +10,12 @@ import {
   useToast,
 } from '@chakra-ui/react';
 import { useForm } from '@formspree/react';
+import { useAppContext } from '../../context';
 
 function ContactUs(): JSX.Element {
   // form-id
   const [state, handleSubmit] = useForm("mbjqkgor");
+  const { contactUsSectionRef } = useAppContext()!;
   const toast = useToast()
 
   useEffect(() => {
@@ -31,7 +33,7 @@ function ContactUs(): JSX.Element {
 
   return (
     <Box bg="gray.800">
-      <Center marginTop="2em">
+      <Center marginTop="2em" ref={contactUsSectionRef}>
         <Text fontSize={['2xl', '3xl', '4xl']} color="white">Contact Us</Text>
       </Center>
       <Center padding="1em">
