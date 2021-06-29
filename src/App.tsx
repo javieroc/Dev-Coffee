@@ -3,12 +3,11 @@ import { Flex } from '@chakra-ui/react';
 import {
   About,
   ContactUs,
-  Header,
-  Footer,
   Projects,
   Technologies,
   Team,
-} from './components';
+} from './views';
+import { Footer, Header } from './components';
 import { AppContext } from './context';
 
 function App(): JSX.Element {
