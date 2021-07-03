@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Center, Flex, Img, Tag, Text } from '@chakra-ui/react';
 import { useAppContext } from '../../context';
+import Background from '../../assets/panel.jpg';
 
 function Team(): JSX.Element {
   const { teamSectionRef } = useAppContext()!;
@@ -69,7 +70,7 @@ function Team(): JSX.Element {
       </Box>
 
       <Box
-        backgroundImage="url('src/assets/panel.jpg')"
+        backgroundImage={`url(${Background})`}
         width="100%"
         minHeight="400px"
         backgroundSize="cover"
