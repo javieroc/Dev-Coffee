@@ -67,7 +67,7 @@ function About(): JSX.Element {
         </Box>
       </Flex>
       <Box width={["300px", "300px", "400px", "600px"]}>
-        <Text fontSize={["md", "lg", "xl", "xx-large"]} textAlign="justify">We are a Team of developers ready to help you to delivery your product.</Text>
+        <Text fontSize={["md", "lg", "xl", "2xl"]} textAlign="justify">We are a Team of developers ready to help you to delivery your product.</Text>
       </Box>
     </Stack>
   );

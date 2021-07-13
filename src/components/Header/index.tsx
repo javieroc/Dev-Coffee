@@ -10,7 +10,7 @@ import Night from '../../assets/night-1.jpg';
 const imageCss = css({
   position: 'absolute',
   width: '100%',
-  height: '35vw',
+  height: '30vw',
 });
 
 const variants = {
