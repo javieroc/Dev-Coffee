@@ -1,5 +1,16 @@
 import React from 'react';
-import { Flex, Text, Center, Box, Stack } from "@chakra-ui/react";
+import { motion } from 'framer-motion';
+import { Flex, Text, Box, Stack } from "@chakra-ui/react";
+import { css, cx } from '@emotion/css';
+
+const animatedBoxCss = css({
+  borderRadius: '4px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '100%',
+  height: '100%',
+});
 
 function About(): JSX.Element {
   return (
@@ -13,23 +24,22 @@ function About(): JSX.Element {
       justify="center"
       align="center"
     >
-      <Flex width={["8em", "10em", "12em"]} height={["8em", "10em", "12em"]} position="relative">
-        <Center
-          bg="gray.800"
-          width={["4em", "5em", "6em"]}
-          height={["4em", "5em", "6em"]}
-          borderRadius="4px"
+      <Flex width={["8em", "10em", "12em", "16em"]} height={["8em", "10em", "12em", "16em"]} position="relative">
+        <Box
+          width={["4em", "5em", "6em", "8em"]}
+          height={["4em", "5em", "6em", "8em"]}
           zIndex="4"
           position="absolute"
           top="0"
           left="0"
         >
-          <Box fontSize="2xl" color="orange.400">D</Box>
-        </Center>
-        <Center
-          bg="gray.200"
-          width={["4em", "5em", "6em"]}
-          height={["4em", "5em", "6em"]}
+          <motion.div whileHover={{ scale: 1.2, rotate: [0, 0, 270, 270, 0], }} className={cx(animatedBoxCss, css({ backgroundColor: '#1A202C' }))}>
+            <Text fontSize="2xl" color="orange.400">D</Text>
+          </motion.div>
+        </Box>
+        <Box
+          width={["4em", "5em", "6em", "8em"]}
+          height={["4em", "5em", "6em", "8em"]}
           borderRadius="4px"
           position="absolute"
           top="25%"
@@ -37,12 +47,13 @@ function About(): JSX.Element {
           zIndex="5"
           opacity=".9"
         >
-          <Box fontSize="2xl" color="gray.600">&</Box>
-        </Center>
-        <Center
-          bg="gray.400"
-          width={["4em", "5em", "6em"]}
-          height={["4em", "5em", "6em"]}
+          <motion.div whileHover={{ scale: 1.2, rotate: [0, 0, 270, 270, 0], }} className={cx(animatedBoxCss, css({ backgroundColor: '#E2E8F0' }))}>
+            <Text fontSize="2xl" color="gray.600">&</Text>
+          </motion.div>
+        </Box>
+        <Box
+          width={["4em", "5em", "6em", "8em"]}
+          height={["4em", "5em", "6em", "8em"]}
           borderRadius="4px"
           position="absolute"
           top="50%"
@@ -50,11 +61,13 @@ function About(): JSX.Element {
           zIndex="6"
           opacity=".9"
         >
-          <Box fontSize="2xl" color="white">C</Box>
-        </Center>
+          <motion.div whileHover={{ scale: 1.2, rotate: [0, 0, 270, 270, 0], }} className={cx(animatedBoxCss, css({ backgroundColor: '#A0AEC0' }))}>
+            <Text fontSize="2xl" color="white">C</Text>
+          </motion.div>
+        </Box>
       </Flex>
-      <Box width="300px">
-        <Text fontSize={["md", "lg", "xl"]} textAlign="justify">We are a Team of developers ready to help you to delivery your product.</Text>
+      <Box width={["300px", "300px", "400px", "600px"]}>
+        <Text fontSize={["md", "lg", "xl", "xx-large"]} textAlign="justify">We are a Team of developers ready to help you to delivery your product.</Text>
       </Box>
     </Stack>
   );
