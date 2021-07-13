@@ -93,19 +93,19 @@ function Projects(): JSX.Element {
             borderRadius="8px"
             border="2px solid white"
           >
-            <Box width={["100%", "100%", "60%"]}>
+            <Box width="60%">
               <Image
                 src={project.src}
                 borderRadius={["8px 8px 0px 0px", "8px 8px 0px 0px", "8px"]}
               />
             </Box>
             <Box
-              width={["100%", "100%", "38%"]}
+              width="38%"
               bg="white"
               borderRadius={["0px 0px 4px 4px", "0px 0px 4px 4px", "4px"]}
               padding="16px"
             >
-              <Text fontSize="lg">{project.text}</Text>
+              <Text fontSize={["xs", "sm", "md", "lg"]}>{project.text}</Text>
             </Box>
           </Flex>
         </motion.div>
