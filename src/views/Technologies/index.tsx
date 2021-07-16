@@ -1,5 +1,7 @@
 import React from 'react';
-import { Flex, Box, Image, Text, Center } from '@chakra-ui/react';
+import {
+  Flex, Box, Image, Text, Center,
+} from '@chakra-ui/react';
 import { useAppContext } from '../../context';
 import PythonLogo from '../../assets/python.png';
 import JSLogo from '../../assets/js.png';
@@ -41,25 +43,28 @@ function Technologies(): JSX.Element {
         margin="auto"
         width={['100%', '80%', '60%']}
       >
-        <Box fontSize="0" _before={{
-          content: '""',
-          width: ['calc(70px/2 + 4px)', 'calc(100px/2 + 4px)'],
-          float: 'left',
-          height: '100%',
-          shapeOutside: [
-            'repeating-linear-gradient(transparent 0 calc((70px*3*1.1547/2 + 4*4px) - 3px), #fff 0 calc(70px*3*1.1547/2 + 4*4px))',
-            'repeating-linear-gradient(transparent 0 calc((100px*3*1.1547/2 + 4*4px) - 3px), #fff 0 calc(100px*3*1.1547/2 + 4*4px))'
-          ]
-        }}>
-          {images.map((image: string, index: number) => (
+        <Box
+          fontSize="0"
+          _before={{
+            content: '""',
+            width: ['calc(70px/2 + 4px)', 'calc(100px/2 + 4px)'],
+            float: 'left',
+            height: '100%',
+            shapeOutside: [
+              'repeating-linear-gradient(transparent 0 calc((70px*3*1.1547/2 + 4*4px) - 3px), #fff 0 calc(70px*3*1.1547/2 + 4*4px))',
+              'repeating-linear-gradient(transparent 0 calc((100px*3*1.1547/2 + 4*4px) - 3px), #fff 0 calc(100px*3*1.1547/2 + 4*4px))',
+            ],
+          }}
+        >
+          {images.map((image: string) => (
             <Box
-              key={index}
-              width={["70px", "100px"]}
-              height={["calc(70px*1.1547)", "calc(100px*1.1547)"]}
+              key={image}
+              width={['70px', '100px']}
+              height={['calc(70px*1.1547)', 'calc(100px*1.1547)']}
               margin="4px"
               clipPath="polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%)"
-              marginBottom={["calc(4px - 70px*0.2885)", "calc(4px - 100px*0.2885)"]}
-              display='inline-block'
+              marginBottom={['calc(4px - 70px*0.2885)', 'calc(4px - 100px*0.2885)']}
+              display="inline-block"
               background="white"
               position="relative"
             >

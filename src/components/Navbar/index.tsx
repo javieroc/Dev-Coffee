@@ -31,7 +31,7 @@ function Navbar(): JSX.Element {
             margin="0 4px"
             cursor="pointer"
             onClick={() => {
-              stackSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+              stackSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
             Stack
@@ -44,7 +44,7 @@ function Navbar(): JSX.Element {
             margin="0 4px"
             cursor="pointer"
             onClick={() => {
-              teamSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+              teamSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
             Team
@@ -57,7 +57,7 @@ function Navbar(): JSX.Element {
             margin="0 4px"
             cursor="pointer"
             onClick={() => {
-              projectsSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+              projectsSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
             Projects
@@ -70,7 +70,7 @@ function Navbar(): JSX.Element {
             margin="0 4px"
             cursor="pointer"
             onClick={() => {
-              contactUsSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+              contactUsSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
             Contact Us
@@ -78,7 +78,7 @@ function Navbar(): JSX.Element {
         </Flex>
       </Flex>
     </Box>
-  )
+  );
 }
 
 export { Navbar };

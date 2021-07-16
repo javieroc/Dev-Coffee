@@ -22,7 +22,8 @@ function App(): JSX.Element {
       teamSectionRef,
       projectsSectionRef,
       contactUsSectionRef,
-    }}>
+    }}
+    >
       <Flex direction="column">
         <Header />
         <About />
@@ -36,4 +37,4 @@ function App(): JSX.Element {
   );
 }
 
-export { App }
+export { App };

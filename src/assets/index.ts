@@ -1,7 +1,8 @@
 function importAll() {
   const promises = import.meta.glob('./*.jpg');
   const images: any = {};
-  for(const path in promises) {
+  /* eslint-disable */
+  for (const path in promises) {
     promises[path]().then((image) => images[path.replace(/^.*[\\/]/, '').replace(/\.[^/.]+$/, '')] = image);
   }
   return images;

@@ -14,20 +14,20 @@ import { useAppContext } from '../../context';
 
 function ContactUs(): JSX.Element {
   // form-id
-  const [state, handleSubmit] = useForm("mbjqkgor");
+  const [state, handleSubmit] = useForm('mbjqkgor');
   const { contactUsSectionRef } = useAppContext()!;
-  const toast = useToast()
+  const toast = useToast();
 
   useEffect(() => {
     if (state.succeeded) {
       toast({
-        title: "Thank you!",
+        title: 'Thank you!',
         description: "We've received your message.",
-        status: "success",
+        status: 'success',
         duration: 3000,
         isClosable: true,
         position: 'bottom-right',
-      })
+      });
     }
   }, [state.succeeded]);
 

@@ -13,24 +13,20 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useAppContext } from '../../context';
 
 const variants = {
-  enter: (direction: number) => {
-    return {
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0
-    };
-  },
+  enter: (direction: number) => ({
+    x: direction > 0 ? 1000 : -1000,
+    opacity: 0,
+  }),
   center: {
     zIndex: 1,
     x: 0,
-    opacity: 1
+    opacity: 1,
   },
-  exit: (direction: number) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0
-    };
-  }
+  exit: (direction: number) => ({
+    zIndex: 0,
+    x: direction < 0 ? 1000 : -1000,
+    opacity: 0,
+  }),
 };
 
 function Projects(): JSX.Element {
@@ -58,7 +54,7 @@ function Projects(): JSX.Element {
       src: 'https://picsum.photos/id/30/800/600',
       text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cupiditate dicta aliquam eligendi quasi omnis autem, alias quia eum hic?',
     },
-  ]
+  ];
 
   const paginate = (newDirection: number) => {
     setProject([page + newDirection, newDirection]);
@@ -79,8 +75,8 @@ function Projects(): JSX.Element {
           animate="center"
           exit="exit"
           transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
-            opacity: { duration: 0.2 }
+            x: { type: 'spring', stiffness: 300, damping: 30 },
+            opacity: { duration: 0.2 },
           }}
         >
           <Flex
@@ -96,16 +92,16 @@ function Projects(): JSX.Element {
             <Box width="60%">
               <Image
                 src={project.src}
-                borderRadius={["8px 8px 0px 0px", "8px 8px 0px 0px", "8px"]}
+                borderRadius={['8px 8px 0px 0px', '8px 8px 0px 0px', '8px']}
               />
             </Box>
             <Box
               width="38%"
               bg="white"
-              borderRadius={["0px 0px 4px 4px", "0px 0px 4px 4px", "4px"]}
+              borderRadius={['0px 0px 4px 4px', '0px 0px 4px 4px', '4px']}
               padding="16px"
             >
-              <Text fontSize={["xs", "sm", "md", "lg"]}>{project.text}</Text>
+              <Text fontSize={['xs', 'sm', 'md', 'lg']}>{project.text}</Text>
             </Box>
           </Flex>
         </motion.div>
@@ -134,7 +130,7 @@ function Projects(): JSX.Element {
         </HStack>
       </Center>
     </AnimatePresence>
-  )
+  );
 }
 
-export { Projects }
+export { Projects };

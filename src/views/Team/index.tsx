@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Center, Flex, Img, Tag, Text } from '@chakra-ui/react';
+import {
+  Box, Center, Flex, Img, Tag, Text,
+} from '@chakra-ui/react';
 import { useAppContext } from '../../context';
 import Background from '../../assets/panel.jpg';
 
@@ -10,7 +12,7 @@ function Team(): JSX.Element {
     <Flex direction="column">
       <Box
         background="blue.600"
-        height={["30px", "40px", "60px"]}
+        height={['30px', '40px', '60px']}
         width="100%"
         position="relative"
       >
@@ -25,14 +27,14 @@ function Team(): JSX.Element {
           borderRight="50px solid transparent"
           position="absolute"
           left="50%"
-          top={["30px", "40px", "60px"]}
+          top={['30px', '40px', '60px']}
           transform="translate(-50%, 0)"
           zIndex="4"
         />
       </Box>
       <Box
         background="white"
-        height={["10px", "20px", "30px"]}
+        height={['10px', '20px', '30px']}
         width="100%"
         position="relative"
       >
@@ -44,14 +46,14 @@ function Team(): JSX.Element {
           borderRight="55px solid transparent"
           position="absolute"
           left="50%"
-          top={["10px", "20px", "30px"]}
+          top={['10px', '20px', '30px']}
           transform="translate(-50%, 0)"
           zIndex="3"
         />
       </Box>
       <Box
         background="#2D3748"
-        height={["10px", "20px", "30px"]}
+        height={['10px', '20px', '30px']}
         width="100%"
         position="relative"
       >
@@ -63,7 +65,7 @@ function Team(): JSX.Element {
           borderRight="60px solid transparent"
           position="absolute"
           left="50%"
-          top={["10px", "20px", "30px"]}
+          top={['10px', '20px', '30px']}
           transform="translate(-50%, 0)"
           zIndex="2"
         />
@@ -81,8 +83,8 @@ function Team(): JSX.Element {
         _after={{
           content: '""',
           display: 'block',
-          width: "100%",
-          minHeight: "400px",
+          width: '100%',
+          minHeight: '400px',
           background: `linear-gradient(
             40deg,
             #fff2 0%,
@@ -102,25 +104,25 @@ function Team(): JSX.Element {
             #fff2 100%
           )`,
           position: 'absolute',
-          zIndex: 0
+          zIndex: 0,
         }}
       >
         {[
           {
             name: 'Dani',
-            title: 'Frontend Developer'
+            title: 'Frontend Developer',
           },
           {
             name: 'Facu',
-            title: 'Software Engineer'
+            title: 'Software Engineer',
           },
           {
             name: 'Matt',
-            title: 'Software Developer'
+            title: 'Software Developer',
           },
           {
             name: 'Connan',
-            title: 'Software Developer'
+            title: 'Software Developer',
           },
         ].map((member) => (
           <Box display="flex" flexDirection="column" alignItems="center" key={member.name}>
@@ -144,7 +146,7 @@ function Team(): JSX.Element {
 
       <Box
         background="#2D3748"
-        height={["15px", "15px", "20px"]}
+        height={['15px', '15px', '20px']}
         width="100%"
         position="relative"
       >
@@ -156,13 +158,13 @@ function Team(): JSX.Element {
           borderRight="25px solid transparent"
           position="absolute"
           left="50%"
-          bottom={["15px", "15px", "20px"]}
+          bottom={['15px', '15px', '20px']}
           transform="translate(-50%, 0)"
         />
       </Box>
       <Box
         background="#A0AEC0"
-        height={["10px", "20px", "30px"]}
+        height={['10px', '20px', '30px']}
         width="100%"
         position="relative"
       >
@@ -174,7 +176,7 @@ function Team(): JSX.Element {
           borderRight="30px solid transparent"
           position="absolute"
           left="50%"
-          bottom={["10px", "20px", "30px"]}
+          bottom={['10px', '20px', '30px']}
           transform="translate(-50%, 0)"
           zIndex="4"
         />
@@ -184,4 +186,3 @@ function Team(): JSX.Element {
 }
 
 export { Team };
-

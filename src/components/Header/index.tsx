@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Box } from '@chakra-ui/react';
-import { Navbar } from '../Navbar';
 import { AnimatePresence, motion } from 'framer-motion';
 import { css } from '@emotion/css';
+import { Navbar } from '../Navbar';
 import Morning from '../../assets/morning-1.jpg';
 import Afternoon from '../../assets/afternoon-1.jpg';
 import Night from '../../assets/night-1.jpg';
@@ -15,16 +15,16 @@ const imageCss = css({
 
 const variants = {
   enter: {
-    opacity: 0
+    opacity: 0,
   },
   center: {
     zIndex: 1,
-    opacity: 1
+    opacity: 1,
   },
   exit: {
     zIndex: 0,
-    opacity: 0
-  }
+    opacity: 0,
+  },
 };
 
 function Header(): JSX.Element {
@@ -37,7 +37,7 @@ function Header(): JSX.Element {
   }, [image, setImage]);
 
   return (
-    <Box minHeight="35vw" >
+    <Box minHeight="35vw">
       <AnimatePresence>
         <motion.img
           key={images[image]}
@@ -52,7 +52,7 @@ function Header(): JSX.Element {
       </AnimatePresence>
       <Navbar />
     </Box>
-  )
+  );
 }
 
-export { Header }
+export { Header };

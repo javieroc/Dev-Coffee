@@ -9,10 +9,10 @@ function Footer(): JSX.Element {
         as="i"
         color="white"
       >
-        {'Dev by Dev&Coffee'}
+        Dev by Dev&Coffee
       </Text>
     </Flex>
   );
 }
 
-export { Footer }
+export { Footer };
