@@ -1,4 +1,6 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import {
+  Box, Flex, Heading, VStack, Text,
+} from '@chakra-ui/react';
 import React from 'react';
 import { useAppContext } from '../../context';
 
@@ -9,6 +11,33 @@ function Navbar(): JSX.Element {
     stackSectionRef,
     teamSectionRef,
   } = useAppContext()!;
+
+  const links = [
+    {
+      label: 'Stack',
+      action: () => {
+        stackSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+      },
+    },
+    {
+      label: 'Team',
+      action: () => {
+        teamSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+      },
+    },
+    {
+      label: 'Projects',
+      action: () => {
+        projectsSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+      },
+    },
+    {
+      label: 'Contact Us',
+      action: () => {
+        contactUsSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+      },
+    },
+  ];
 
   return (
     <Box position="absolute" zIndex="10" width="100%">
@@ -23,59 +52,39 @@ function Navbar(): JSX.Element {
           <Text fontSize="xl" color="black">Coffee</Text>
         </Flex>
         <Flex>
-          <Text
-            border="2px solid rgb(247,250,252, .85)"
-            borderRadius="4px"
-            padding="4px"
-            color="rgb(247,250,252, .85)"
-            margin="0 4px"
-            cursor="pointer"
-            onClick={() => {
-              stackSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Stack
-          </Text>
-          <Text
-            border="2px solid rgb(247,250,252, .85)"
-            borderRadius="4px"
-            padding="4px"
-            color="rgb(247,250,252, .85)"
-            margin="0 4px"
-            cursor="pointer"
-            onClick={() => {
-              teamSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Team
-          </Text>
-          <Text
-            border="2px solid rgb(247,250,252, .85)"
-            borderRadius="4px"
-            padding="4px"
-            color="rgb(247,250,252, .85)"
-            margin="0 4px"
-            cursor="pointer"
-            onClick={() => {
-              projectsSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Projects
-          </Text>
-          <Text
-            border="2px solid rgb(247,250,252, .85)"
-            borderRadius="4px"
-            padding="4px"
-            color="rgb(247,250,252, .85)"
-            margin="0 4px"
-            cursor="pointer"
-            onClick={() => {
-              contactUsSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Contact Us
-          </Text>
+          {links.map((link) => (
+            <Text
+              key={link.label}
+              border="2px solid #2D3748"
+              borderRadius="4px"
+              backgroundColor="gray.50"
+              padding="4px 8px"
+              color="gray.700"
+              fontWeight="bold"
+              margin="0 4px"
+              cursor="pointer"
+              onClick={link.action}
+              _hover={{
+                backgroundColor: 'gray.100',
+              }}
+            >
+              {link.label}
+            </Text>
+          ))}
         </Flex>
+      </Flex>
+      <Flex marginTop="5%" marginLeft="10%">
+        <VStack align="flex-start">
+          <Heading
+            fontSize={['xl', 'xx-large', 'xxx-large']}
+            padding="4px"
+            backgroundColor="gray.100"
+            opacity="0.8"
+          >
+            The Support You Need
+          </Heading>
+          <Heading size="sm" color="white" padding="4px">We Make Your Ideas Come True</Heading>
+        </VStack>
       </Flex>
     </Box>
   );
