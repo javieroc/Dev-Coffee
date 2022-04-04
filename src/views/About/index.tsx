@@ -19,9 +19,7 @@ function About(): JSX.Element {
     <Stack
       spacing="24px"
       bg="white"
-      padding="1em"
-      margin={['3em 0', '3.5em 0', '4em 0']}
-      minHeight={['20vw', '25vw']}
+      padding="4em 1em"
       direction="row"
       justify="center"
       align="center"

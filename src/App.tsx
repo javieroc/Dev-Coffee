@@ -4,6 +4,7 @@ import {
   About,
   ContactUs,
   Projects,
+  Services,
   Technologies,
   Team,
 } from './views';
@@ -27,6 +28,7 @@ function App(): JSX.Element {
       <Flex direction="column">
         <Header />
         <About />
+        <Services />
         <Technologies />
         <Team />
         <Projects />

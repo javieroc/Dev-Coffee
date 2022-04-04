@@ -1,28 +1,34 @@
 module.exports = {
   env: {
-    browser: true,
-    es2021: true,
+      browser: true,
+      es2021: true
   },
   extends: [
-    'plugin:react/recommended',
-    'airbnb-typescript',
+      'plugin:react/recommended',
+      'airbnb',
+      'airbnb-typescript'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 12,
-    sourceType: 'module',
-    project: './tsconfig.json',
+      ecmaFeatures: {
+          jsx: true
+      },
+      ecmaVersion: 13,
+      sourceType: 'module',
+      tsconfigRootDir: __dirname,
+      project: './tsconfig.json'
   },
+  ignorePatterns: ['.eslintrc.js', 'vite.config.ts'],
   plugins: [
-    'react',
-    'react-hooks',
-    '@typescript-eslint',
+      'react',
+      'react-hooks',
+      '@typescript-eslint'
   ],
   rules: {
-    'react/jsx-filename-extension': ['warn', { extensions: ['.ts', '.tsx'] }],
     'import/prefer-default-export': 'off',
-  },
+    'react/react-in-jsx-scope': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/require-default-props': 'off',
+    'react/no-unstable-nested-components': 'off'
+  }
 };
