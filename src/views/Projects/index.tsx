@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
-  Center,
   Flex,
   Heading,
   Image,
+  IconButton,
   Text,
   VStack,
 } from '@chakra-ui/react';
@@ -63,16 +63,17 @@ function Projects(): JSX.Element {
     setProject([page + newDirection, newDirection]);
   };
 
-  const project = projects[Math.abs(page % 4)];
+  const project = projects[Math.abs(page % projects.length)];
   return (
     <AnimatePresence custom={direction} initial={false}>
-      <Center
-        bg="blue.900"
-        position="relative"
-        flexDirection="column"
+      <VStack
+        spacing="24px"
+        bg="white"
         padding="3em 1em"
+        justify="center"
+        align="center"
       >
-        <Heading ref={projectsSectionRef}>Services</Heading>
+        <Heading ref={projectsSectionRef}>Projects</Heading>
         <motion.div
           key={project.id}
           custom={direction}
@@ -89,17 +90,40 @@ function Projects(): JSX.Element {
             maxWidth="1024px"
             justifyContent="center"
             alignItems="center"
+            backgroundColor="gray.50"
+            boxShadow="md"
+            gap="12px"
           >
-            <ChevronLeftIcon onClick={() => paginate(-1)} />
-            <VStack>
+            <IconButton
+              aria-label="Prev"
+              icon={<ChevronLeftIcon />}
+              onClick={() => paginate(1)}
+              variant="link"
+              fontSize="64px"
+            />
+            <VStack
+              width="50%"
+              align="flex-start"
+            >
               <Heading>{project.title}</Heading>
               <Text>{project.text}</Text>
             </VStack>
-            <Image src={project.src} />
-            <ChevronRightIcon onClick={() => paginate(1)} />
+            <Image
+              src={project.src}
+              width="40%"
+              minHeight="500px"
+              objectFit="cover"
+            />
+            <IconButton
+              aria-label="Next"
+              icon={<ChevronRightIcon />}
+              onClick={() => paginate(-1)}
+              variant="link"
+              fontSize="64px"
+            />
           </Flex>
         </motion.div>
-      </Center>
+      </VStack>
     </AnimatePresence>
   );
 }
