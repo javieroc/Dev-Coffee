@@ -29,9 +29,9 @@ function App(): JSX.Element {
         <Header />
         <About />
         <Services />
+        <Projects />
         <Technologies />
         <Team />
-        <Projects />
         <ContactUs />
         <Footer />
       </Flex>
