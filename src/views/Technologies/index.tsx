@@ -1,8 +1,4 @@
-import React from 'react';
-import {
-  Flex, Box, Image, Text, Center,
-} from '@chakra-ui/react';
-import { useAppContext } from '../../context';
+import { Flex, Box, Image } from '@chakra-ui/react';
 import PythonLogo from '../../assets/python.png';
 import JSLogo from '../../assets/js.png';
 import NodeLogo from '../../assets/node.png';
@@ -16,8 +12,6 @@ import PostgresLogo from '../../assets/postgres.png';
 import MongoLogo from '../../assets/mongo.png';
 
 function Technologies(): JSX.Element {
-  const { stackSectionRef } = useAppContext()!;
-
   const images = [
     TypescriptLogo,
     ReactLogo,
@@ -33,15 +27,12 @@ function Technologies(): JSX.Element {
   ];
 
   return (
-    <Box background="blue.700">
-      <Center marginTop="2em" ref={stackSectionRef}>
-        <Text fontSize={['2xl', '3xl', '4xl']} color="white">Our Skills</Text>
-      </Center>
+    <Box background="gray.800">
       <Flex
-        background="blue.700"
-        padding="3em 1em 7em 1em"
+        background="gray.800"
+        padding="1em"
         margin="auto"
-        width={['100%', '80%', '60%']}
+        width={['100%', '90%', '75%']}
       >
         <Box
           fontSize="0"
