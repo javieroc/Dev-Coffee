@@ -30,8 +30,8 @@ function App(): JSX.Element {
         <About />
         <Services />
         <Projects />
-        <Technologies />
         <Team />
+        <Technologies />
         <ContactUs />
         <Footer />
       </Flex>
