@@ -1,16 +1,19 @@
 import React, { useEffect } from 'react';
 import {
-  Box,
   Button,
-  Center,
   Flex,
+  Heading,
+  HStack,
+  Image,
   Input,
-  Text,
   Textarea,
   useToast,
+  VStack,
 } from '@chakra-ui/react';
 import { useForm } from '@formspree/react';
 import { useAppContext } from '../../context';
+import Background from '../../assets/contact-us/wave.svg';
+import GuyImage from '../../assets/contact-us/guy.png';
 
 function ContactUs(): JSX.Element {
   // form-id
@@ -32,24 +35,85 @@ function ContactUs(): JSX.Element {
   }, [state.succeeded]);
 
   return (
-    <Box bg="gray.800">
-      <Center marginTop="2em" ref={contactUs}>
-        <Text fontSize={['2xl', '3xl', '4xl']} color="white">Contact Us</Text>
-      </Center>
-      <Center padding="1em">
-        <form onSubmit={handleSubmit}>
-          <Flex width="800px" direction="column">
-            <Input name="fullname" placeholder="Full name" size="md" marginBottom="1em" color="white" isRequired />
-            <Input name="email" placeholder="Email" type="email" size="md" marginBottom="1em" color="white" isRequired />
-            <Input name="subject" placeholder="Subject" size="md" marginBottom="1em" color="white" isRequired />
-            <Textarea name="message" placeholder="Message" size="md" marginBottom="1em" color="white" minHeight="150px" isRequired />
-            <Button type="submit" colorScheme="green" isLoading={state.submitting}>
-              Send
-            </Button>
-          </Flex>
-        </form>
-      </Center>
-    </Box>
+    <HStack
+      backgroundImage={`url(${Background})`}
+      backgroundRepeat="no-repeat"
+      backgroundPosition="top"
+      spacing="64px"
+      padding="10em 1em 3em 1em"
+      justify="center"
+      align="flex-start"
+    >
+      <form onSubmit={handleSubmit}>
+        <Flex minWidth="500px" direction="column">
+          <Input
+            name="fullname"
+            placeholder="Full name"
+            size="md"
+            marginBottom="1em"
+            borderColor="gray.800"
+            _hover={{
+              borderColor: 'gray.800',
+            }}
+            borderWidth={2}
+            isRequired
+          />
+          <Input
+            name="email"
+            placeholder="Email"
+            type="email"
+            size="md"
+            marginBottom="1em"
+            borderColor="gray.800"
+            _hover={{
+              borderColor: 'gray.800',
+            }}
+            borderWidth={2}
+            isRequired
+          />
+          <Input
+            name="subject"
+            placeholder="Subject"
+            size="md"
+            marginBottom="1em"
+            borderColor="gray.800"
+            _hover={{
+              borderColor: 'gray.800',
+            }}
+            borderWidth={2}
+            isRequired
+          />
+          <Textarea
+            name="message"
+            placeholder="Message"
+            size="md"
+            marginBottom="1em"
+            minHeight="150px"
+            borderColor="gray.800"
+            _hover={{
+              borderColor: 'gray.800',
+            }}
+            borderWidth={2}
+            isRequired
+          />
+          <Button
+            type="submit"
+            colorScheme="blue"
+            isLoading={state.submitting}
+          >
+            Send
+          </Button>
+        </Flex>
+      </form>
+      <VStack justify="flex-start">
+        <Heading ref={contactUs}>Contact Us</Heading>
+        <Image
+          boxSize="256px"
+          src={GuyImage}
+          alt="Contact Us"
+        />
+      </VStack>
+    </HStack>
   );
 }
 
