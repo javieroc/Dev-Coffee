@@ -8,7 +8,7 @@ import { useAppContext } from '../../context';
 import Background from '../../assets/team-section/city-silhouette.svg';
 
 function Team(): JSX.Element {
-  const { teamSectionRef } = useAppContext()!;
+  const { team: teamRef } = useAppContext()!;
   const team = [
     {
       name: 'Dani Esquinazi',
@@ -44,7 +44,7 @@ function Team(): JSX.Element {
     >
       <Heading
         color="white"
-        ref={teamSectionRef}
+        ref={teamRef}
       >
         Team
       </Heading>

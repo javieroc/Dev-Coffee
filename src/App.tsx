@@ -12,17 +12,17 @@ import { Footer, Header } from './components';
 import { AppContext } from './context';
 
 function App(): JSX.Element {
-  const stackSectionRef = useRef<HTMLDivElement | null>(null);
-  const teamSectionRef = useRef<HTMLDivElement | null>(null);
-  const projectsSectionRef = useRef<HTMLDivElement | null>(null);
-  const contactUsSectionRef = useRef<HTMLDivElement | null>(null);
+  const servicesRef = useRef<HTMLDivElement | null>(null);
+  const projectsRef = useRef<HTMLDivElement | null>(null);
+  const teamRef = useRef<HTMLDivElement | null>(null);
+  const contactUsRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <AppContext.Provider value={{
-      stackSectionRef,
-      teamSectionRef,
-      projectsSectionRef,
-      contactUsSectionRef,
+      services: servicesRef,
+      projects: projectsRef,
+      team: teamRef,
+      contactUs: contactUsRef,
     }}
     >
       <Flex direction="column">

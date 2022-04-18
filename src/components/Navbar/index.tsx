@@ -1,40 +1,36 @@
 import {
   Box, Flex, Heading, VStack, Text,
 } from '@chakra-ui/react';
-import React from 'react';
 import { useAppContext } from '../../context';
 
 function Navbar(): JSX.Element {
   const {
-    contactUsSectionRef,
-    projectsSectionRef,
-    stackSectionRef,
-    teamSectionRef,
+    services, projects, team, contactUs,
   } = useAppContext()!;
 
   const links = [
     {
-      label: 'Stack',
+      label: 'Services',
       action: () => {
-        stackSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
-      },
-    },
-    {
-      label: 'Team',
-      action: () => {
-        teamSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+        services.current?.scrollIntoView({ behavior: 'smooth' });
       },
     },
     {
       label: 'Projects',
       action: () => {
-        projectsSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+        projects.current?.scrollIntoView({ behavior: 'smooth' });
+      },
+    },
+    {
+      label: 'Team',
+      action: () => {
+        team.current?.scrollIntoView({ behavior: 'smooth' });
       },
     },
     {
       label: 'Contact Us',
       action: () => {
-        contactUsSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+        contactUs.current?.scrollIntoView({ behavior: 'smooth' });
       },
     },
   ];

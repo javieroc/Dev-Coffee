@@ -15,7 +15,7 @@ import { useAppContext } from '../../context';
 function ContactUs(): JSX.Element {
   // form-id
   const [state, handleSubmit] = useForm('mbjqkgor');
-  const { contactUsSectionRef } = useAppContext()!;
+  const { contactUs } = useAppContext()!;
   const toast = useToast();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function ContactUs(): JSX.Element {
 
   return (
     <Box bg="gray.800">
-      <Center marginTop="2em" ref={contactUsSectionRef}>
+      <Center marginTop="2em" ref={contactUs}>
         <Text fontSize={['2xl', '3xl', '4xl']} color="white">Contact Us</Text>
       </Center>
       <Center padding="1em">

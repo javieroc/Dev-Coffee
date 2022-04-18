@@ -1,15 +1,15 @@
 import { Flex, Box, Image } from '@chakra-ui/react';
-import PythonLogo from '../../assets/python.png';
-import JSLogo from '../../assets/js.png';
-import NodeLogo from '../../assets/node.png';
-import ReactLogo from '../../assets/react.png';
-import ReduxLogo from '../../assets/redux.png';
-import GraphqlLogo from '../../assets/graphql.png';
-import DockerLogo from '../../assets/docker.png';
-import TypescriptLogo from '../../assets/typescript.png';
-import PHPLogo from '../../assets/php.png';
-import PostgresLogo from '../../assets/postgres.png';
-import MongoLogo from '../../assets/mongo.png';
+import PythonLogo from '../../assets/team-section/tech-icons/python.png';
+import JSLogo from '../../assets/team-section/tech-icons/js.png';
+import NodeLogo from '../../assets/team-section/tech-icons/node.png';
+import ReactLogo from '../../assets/team-section/tech-icons/react.png';
+import ReduxLogo from '../../assets/team-section/tech-icons/redux.png';
+import GraphqlLogo from '../../assets/team-section/tech-icons/graphql.png';
+import DockerLogo from '../../assets/team-section/tech-icons/docker.png';
+import TypescriptLogo from '../../assets/team-section/tech-icons/typescript.png';
+import PHPLogo from '../../assets/team-section/tech-icons/php.png';
+import PostgresLogo from '../../assets/team-section/tech-icons/postgres.png';
+import MongoLogo from '../../assets/team-section/tech-icons/mongo.png';
 
 function Technologies(): JSX.Element {
   const images = [

@@ -30,7 +30,7 @@ const variants = {
 
 function Projects(): JSX.Element {
   const [[page, direction], setProject] = useState([0, 0]);
-  const { projectsSectionRef } = useAppContext()!;
+  const { projects: projectsRef } = useAppContext()!;
 
   const projects = [
     {
@@ -73,7 +73,7 @@ function Projects(): JSX.Element {
         justify="center"
         align="center"
       >
-        <Heading ref={projectsSectionRef}>Projects</Heading>
+        <Heading ref={projectsRef}>Projects</Heading>
         <motion.div
           key={project.id}
           custom={direction}

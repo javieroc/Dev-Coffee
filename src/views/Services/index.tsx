@@ -12,6 +12,7 @@ import DevImage from '../../assets/service-icons/dev.png';
 import DeployImage from '../../assets/service-icons/deploy.png';
 import DevopsImage from '../../assets/service-icons/devops.png';
 import CodeImage from '../../assets/service-icons/code.png';
+import { useAppContext } from '../../context';
 
 interface Props extends FlexProps {
   title: string;
@@ -44,6 +45,8 @@ function ServiceCard({
 }
 
 function Services(): JSX.Element {
+  const { services: servicesRef } = useAppContext()!;
+
   return (
     <VStack
       spacing="24px"
@@ -52,7 +55,7 @@ function Services(): JSX.Element {
       justify="center"
       align="center"
     >
-      <Heading>Services</Heading>
+      <Heading ref={servicesRef}>Services</Heading>
       <Flex gap="32px" flexWrap="wrap" maxWidth="854px">
         <ServiceCard
           title="Got an Idea"
