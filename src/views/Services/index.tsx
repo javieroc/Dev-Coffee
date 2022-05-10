@@ -29,9 +29,17 @@ function ServiceCard({
       padding="14px 24px"
       boxShadow="md"
       gap="24px"
+      flexGrow={1}
       {...rest}
     >
-      {secondImage && <Image src={secondImage} width="250px" height="140px" />}
+      {secondImage && (
+      <Image
+        src={secondImage}
+        width="250px"
+        height="140px"
+        display={{ base: 'none', md: 'flex' }}
+      />
+      )}
       <VStack align="flex-start">
         <Heading size="md">{title}</Heading>
         <Text fontSize="md">{text}</Text>
@@ -56,12 +64,12 @@ function Services(): JSX.Element {
       align="center"
     >
       <Heading ref={servicesRef}>Services</Heading>
-      <Flex gap="32px" flexWrap="wrap" maxWidth="854px">
+      <Flex gap={['24px', '32px']} flexWrap="wrap" maxWidth="854px">
         <ServiceCard
           title="Got an Idea"
           text="We transform your draft into a formal project!"
           backgroundColor="white"
-          maxWidth="411px"
+          width={['100%', '100%', '411px']}
           image={IdeaImage}
         />
         <ServiceCard
@@ -69,7 +77,7 @@ function Services(): JSX.Element {
           text="Create a prototype to visualize the product and get feedback."
           backgroundColor="white"
           image={DesignImage}
-          maxWidth="411px"
+          width={['100%', '100%', '411px']}
         />
         <ServiceCard
           title="Software Development"
@@ -85,14 +93,14 @@ function Services(): JSX.Element {
           text="we put your application available for your final users."
           backgroundColor="white"
           image={DeployImage}
-          maxWidth="485px"
+          maxWidth={['100%', '100%', '485px']}
         />
         <ServiceCard
           title="Devops"
           text="Whole process is driven by DevOps methodology to ship faster and secure apps."
           backgroundColor="white"
           image={DevopsImage}
-          maxWidth="337px"
+          maxWidth={['100%', '100%', '337px']}
         />
       </Flex>
     </VStack>

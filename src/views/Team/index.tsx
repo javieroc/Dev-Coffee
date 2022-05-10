@@ -54,6 +54,7 @@ function Team(): JSX.Element {
       <Flex gap="24px" flexWrap="wrap" justify="center">
         {team.map((member) => (
           <VStack
+            key={member.name}
             width={['180px', '200px', '240px']}
             height={['240px', '260px', '300px']}
             backgroundImage={`url('${member.image}')`}

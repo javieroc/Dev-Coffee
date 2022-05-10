@@ -45,7 +45,14 @@ function ContactUs(): JSX.Element {
       align="flex-start"
     >
       <form onSubmit={handleSubmit}>
-        <Flex minWidth="500px" direction="column">
+        <Heading
+          justifyContent="center"
+          marginBottom="4"
+          display={{ base: 'flex', md: 'none' }}
+        >
+          Contact Us
+        </Heading>
+        <Flex minWidth={['300px', '400px', '500px']} direction="column">
           <Input
             name="fullname"
             placeholder="Full name"
@@ -105,7 +112,7 @@ function ContactUs(): JSX.Element {
           </Button>
         </Flex>
       </form>
-      <VStack justify="flex-start">
+      <VStack justify="flex-start" display={{ base: 'none', md: 'flex' }}>
         <Heading ref={contactUs}>Contact Us</Heading>
         <Image
           boxSize="256px"
