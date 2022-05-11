@@ -93,6 +93,7 @@ function Projects(): JSX.Element {
             backgroundColor="gray.50"
             boxShadow="md"
             gap="12px"
+            display={{ base: 'none', md: 'flex' }}
           >
             <IconButton
               aria-label="Prev"
@@ -120,6 +121,45 @@ function Projects(): JSX.Element {
               onClick={() => paginate(-1)}
               variant="link"
               fontSize="64px"
+            />
+          </Flex>
+
+          <Flex
+            maxWidth="1024px"
+            justifyContent="center"
+            alignItems="center"
+            backgroundColor="gray.50"
+            boxShadow="md"
+            gap="4px"
+            padding={4}
+            display={{ base: 'flex', md: 'none' }}
+          >
+            <IconButton
+              aria-label="Prev"
+              icon={<ChevronLeftIcon />}
+              onClick={() => paginate(1)}
+              variant="link"
+              fontSize="32px"
+            />
+            <VStack
+              width="100%"
+              align="flex-start"
+            >
+              <Image
+                src={project.src}
+                width="100%"
+                height="200px"
+                objectFit="cover"
+              />
+              <Heading fontSize="lg">{project.title}</Heading>
+              <Text fontSize="sm">{project.text}</Text>
+            </VStack>
+            <IconButton
+              aria-label="Next"
+              icon={<ChevronRightIcon />}
+              onClick={() => paginate(-1)}
+              variant="link"
+              fontSize="32px"
             />
           </Flex>
         </motion.div>

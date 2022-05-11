@@ -48,6 +48,7 @@ function ContactUs(): JSX.Element {
         <Heading
           justifyContent="center"
           marginBottom="4"
+          ref={contactUs}
           display={{ base: 'flex', md: 'none' }}
         >
           Contact Us
